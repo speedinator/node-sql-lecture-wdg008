@@ -8,6 +8,7 @@ const {
   deleteUser,
 } = require("../controllers/users");
 
+//Route = WO, Method = WANN, Controller = WAS
 router.route("/users").get(getAllUsers).post(createUser);
 
 router.route("/users/:id").get(getSinglUser).put(updateUser).delete(deleteUser);
