@@ -4,6 +4,7 @@ const app = express();
 const port = 8080;
 const cors = require("cors");
 const usersRoutes = require("./routes/users");
+const dishesRoutes = require("./routes/dishes")
 
 //parst Daten aus req.body (kommend aus HTML Formularen)
 app.use(express.urlencoded({ extended: true }));
@@ -15,10 +16,11 @@ app.use(express.json());
 app.use(cors());
 
 app.use("/", usersRoutes);
+app.use("/", dishesRoutes);
 
 app.get("/", (req, res) => {
   res.send(
-    "Unsere erste funktionierende API mit SQL! Diese API hat folgende Endpunkte: /users"
+    "Unsere erste funktionierende API mit SQL! Diese API hat folgende Endpunkte: /users und eigentlich auch /dishes"
   );
 });
 
